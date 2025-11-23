@@ -130,6 +130,14 @@
   </collision>
 </link>
 
+<link name="lidar_link"/>
+
+<joint name="lidar_joint" type="fixed">
+  <origin xyz="0 0 0.5" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="lidar_link"/>
+</joint>
+
 <joint name="FL Motor" type="continuous">
   <origin xyz="-0.03 -0.27996 -0.004853" rpy="0 0 0"/>
   <parent link="link1_1"/>
