@@ -8,13 +8,13 @@ import os
 
 def generate_launch_description():
     # world_path= os.path.join(get_package_share_directory('ttb_description'), 'models/worlds/house_env.world'),
-    # world_path=os.path.join(get_package_share_directory('ugv_description'), 'models/worlds/house_env.world'),
+    world_path=os.path.join(get_package_share_directory('ugv_description'), 'worlds/ugv_env.world'),
     
     use_sim_time = LaunchConfiguration('use_sim_time')
 
     return launch.LaunchDescription([
         launch.actions.ExecuteProcess(cmd=['gazebo', '--verbose', '-s', 
-                                            'libgazebo_ros_init.so', '-s', 'libgazebo_ros_factory.so'], 
+                                            'libgazebo_ros_init.so', '-s', 'libgazebo_ros_factory.so', world_path], 
                                            output='screen'),
         launch.actions.DeclareLaunchArgument(name='use_sim_time', default_value='True',
                                 description='Flag to enable use_sim_time'),

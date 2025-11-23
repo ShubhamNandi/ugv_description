@@ -105,7 +105,7 @@
 		<sensor name="ydlidar" type="ray">
 			<always_on>true</always_on>
 			<visualize>false</visualize>
-			<update_rate>10</update_rate>
+			<update_rate>500.0</update_rate>
 			<ray>
 			<scan>
 				<horizontal>
