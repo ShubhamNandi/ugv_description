@@ -1,0 +1,169 @@
+<?xml version="1.0" ?>
+<robot name="ugv_description" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find ugv_description)/models/urdf/materials.xacro" />
+<xacro:include filename="$(find ugv_description)/models/urdf/ugv_description.trans" />
+<xacro:include filename="$(find ugv_description)/models/urdf/ugv_description.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="-0.03631594312792468 -0.0021907304977616406 0.2134242952343704" rpy="0 0 0"/>
+    <mass value="46.56144847350391"/>
+    <inertia ixx="1.456159" iyy="4.958087" izz="5.647464" ixy="-0.018594" iyz="0.004221" ixz="0.415315"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find ugv_description)/models/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find ugv_description)/models/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="link2_1">
+  <inertial>
+    <origin xyz="-0.0001429378559345551 -0.0005018205656247554 0.00013044925709937427" rpy="0 0 0"/>
+    <mass value="4.4480159527366085"/>
+    <inertia ixx="0.029229" iyy="0.056639" izz="0.029237" ixy="-1e-06" iyz="0.000377" ixz="4.1e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.288014 0.281604 -0.137335" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find ugv_description)/models/meshes/link2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.288014 0.281604 -0.137335" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find ugv_description)/models/meshes/link2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="link3_1">
+  <inertial>
+    <origin xyz="0.00014119362334991115 0.029498842305505313 0.0002666411342883146" rpy="0 0 0"/>
+    <mass value="4.448015955810201"/>
+    <inertia ixx="0.02923" iyy="0.056639" izz="0.029236" ixy="-0.0" iyz="0.000377" ixz="4.1e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.288014 -0.248346 -0.144629" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find ugv_description)/models/meshes/link3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.288014 -0.248346 -0.144629" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find ugv_description)/models/meshes/link3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="link5_1">
+  <inertial>
+    <origin xyz="0.00017467959313333115 0.03349962975193255 9.488649474384547e-05" rpy="0 0 0"/>
+    <mass value="4.448015939943306"/>
+    <inertia ixx="0.029208" iyy="0.056644" izz="0.029253" ixy="-0.0" iyz="-0.0" ixz="-3.4e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.302686 -0.250406 -0.140288" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find ugv_description)/models/meshes/link5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.302686 -0.250406 -0.140288" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find ugv_description)/models/meshes/link5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="link4_1">
+  <inertial>
+    <origin xyz="-0.00018895908117527727 -0.032500186541891685 6.11734496533678e-05" rpy="0 0 0"/>
+    <mass value="4.4479910440205925"/>
+    <inertia ixx="0.029197" iyy="0.056644" izz="0.029263" ixy="0.0" iyz="0.0" ixz="2.4e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.302686 0.253694 -0.140288" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find ugv_description)/models/meshes/link4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.302686 0.253694 -0.140288" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find ugv_description)/models/meshes/link4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="link1_1">
+  <inertial>
+    <origin xyz="-0.029998954524655563 -0.0057788606799856115 -0.002147818386067174" rpy="0 0 0"/>
+    <mass value="6.796192323362991"/>
+    <inertia ixx="0.201051" iyy="0.003634" izz="0.201022" ixy="-1e-06" iyz="-0.002675" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.258014 0.001644 -0.142188" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find ugv_description)/models/meshes/link1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.258014 0.001644 -0.142188" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find ugv_description)/models/meshes/link1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="FL Motor" type="continuous">
+  <origin xyz="-0.03 -0.27996 -0.004853" rpy="0 0 0"/>
+  <parent link="link1_1"/>
+  <child link="link2_1"/>
+  <axis xyz="0.0 -0.999905 -0.013764"/>
+</joint>
+
+<joint name="FR Motor" type="continuous">
+  <origin xyz="-0.03 0.24999 0.002441" rpy="0 0 0"/>
+  <parent link="link1_1"/>
+  <child link="link3_1"/>
+  <axis xyz="0.0 0.999905 0.013764"/>
+</joint>
+
+<joint name="RR Motor" type="continuous">
+  <origin xyz="0.302686 0.250406 0.140288" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="link5_1"/>
+  <axis xyz="-0.0 1.0 0.0"/>
+</joint>
+
+<joint name="RL Motor" type="continuous">
+  <origin xyz="0.302686 -0.253694 0.140288" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="link4_1"/>
+  <axis xyz="0.0 -1.0 -0.0"/>
+</joint>
+
+<joint name="Pivot" type="revolute">
+  <origin xyz="-0.258014 -0.001644 0.142188" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="link1_1"/>
+  <axis xyz="-1.0 0.0 0.0"/>
+  <limit upper="0.261799" lower="0.0" effort="100" velocity="100"/>
+</joint>
+
+</robot>
