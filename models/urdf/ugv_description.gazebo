@@ -3,50 +3,102 @@
 
 <xacro:property name="body_color" value="Gazebo/Silver" />
 
-<gazebo>
+<!-- <gazebo>
   <plugin name="control" filename="libgazebo_ros2_control.so"/>
-</gazebo>
+</gazebo> -->
 <gazebo reference="base_link">
   <material>${body_color}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
+  <mu1>0.001</mu1>
+  <mu2>0.001</mu2>
   <selfCollide>true</selfCollide>
   <gravity>true</gravity>
 </gazebo>
 
 <gazebo reference="link2_1">
   <material>${body_color}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
+  <mu1>1.0</mu1>
+  <mu2>1.0</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="link3_1">
   <material>${body_color}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
+  <mu1>1.0</mu1>
+  <mu2>1.0</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="link5_1">
   <material>${body_color}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
+  <mu1>1.0</mu1>
+  <mu2>1.0</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="link4_1">
   <material>${body_color}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
+  <mu1>1.0</mu1>
+  <mu2>1.0</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="link1_1">
   <material>${body_color}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
+  <mu1>0.001</mu1>
+  <mu2>0.001</mu2>
   <selfCollide>true</selfCollide>
+</gazebo>
+
+
+
+
+<!-- ROS2: Use diff_drive plugin for skid steer (supports multiple wheel pairs) -->
+<!-- See: https://github.com/ros-simulation/gazebo_ros_pkgs/wiki/ROS-2-Migration%3A-Skid-Steer-drive -->
+
+
+
+<gazebo>
+	<plugin name='ugv_robot' filename='libgazebo_ros_diff_drive.so'>
+		<ros>
+			<namespace>/</namespace>
+		</ros>
+
+		<update_rate>500.0</update_rate>
+		
+		<!-- Number of wheel pairs (2 for 4 wheels) -->
+		<num_wheel_pairs>2</num_wheel_pairs>
+
+		<!-- Front wheel pair -->
+		<left_joint>RR Motor</left_joint>
+		<right_joint>RL Motor</right_joint>
+
+		<!-- Rear wheel pair -->
+		<left_joint>FR Motor</left_joint>
+		<right_joint>FL Motor</right_joint>
+
+		<!-- kinematics -->
+		<wheel_separation>0.517</wheel_separation>
+		<wheel_diameter>0.33</wheel_diameter>
+		
+		<!-- odometry source: 0=ENCODER, 1=WORLD -->
+		<odometry_source>1</odometry_source>
+
+		<!-- limits -->
+		<max_wheel_torque>1000</max_wheel_torque>
+		<max_wheel_acceleration>100.0</max_wheel_acceleration>
+
+		<!-- output -->
+		<publish_odom>true</publish_odom>
+		<publish_odom_tf>true</publish_odom_tf>
+		<publish_wheel_tf>false</publish_wheel_tf>
+		<publish_wheel_joint_state>true</publish_wheel_joint_state>
+
+		<odometry_frame>odom</odometry_frame>
+		<robot_base_frame>base_link</robot_base_frame>
+		
+		<command_topic>cmd_vel</command_topic>
+		<odometry_topic>odom</odometry_topic>
+	</plugin>
 </gazebo>
 
 </robot>

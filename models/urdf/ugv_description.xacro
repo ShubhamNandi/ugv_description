@@ -134,14 +134,14 @@
   <origin xyz="-0.03 -0.27996 -0.004853" rpy="0 0 0"/>
   <parent link="link1_1"/>
   <child link="link2_1"/>
-  <axis xyz="0.0 -0.999905 -0.013764"/>
+  <axis xyz="0.0 1.0 0.0"/>
 </joint>
 
 <joint name="FR Motor" type="continuous">
   <origin xyz="-0.03 0.24999 0.002441" rpy="0 0 0"/>
   <parent link="link1_1"/>
   <child link="link3_1"/>
-  <axis xyz="0.0 0.999905 0.013764"/>
+  <axis xyz="0.0 1.0 0.0"/>
 </joint>
 
 <joint name="RR Motor" type="continuous">
@@ -155,7 +155,7 @@
   <origin xyz="0.302686 -0.253694 0.140288" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="link4_1"/>
-  <axis xyz="0.0 -1.0 -0.0"/>
+  <axis xyz="0.0 1.0 0.0"/>
 </joint>
 
 <joint name="Pivot" type="revolute">
